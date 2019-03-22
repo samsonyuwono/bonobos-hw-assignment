@@ -1,0 +1,23 @@
+{
+  "name": "bonobos-hw-assignment",
+  "version": "1.0.0",
+  "description": "homework for bonobos",
+  "main": "server.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/samsonyuwono/bonobos-hw-assignment.git"
+  },
+  "author": "Samson Yuwono",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.10"
+  }
+}
