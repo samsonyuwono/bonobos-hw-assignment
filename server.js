@@ -1,4 +1,3 @@
-// app.js
 const express = require("express");
 const mysql = require("mysql");
 const app = express();
@@ -19,53 +18,52 @@ app.get("/", (req, res) => {
   res.send("root success");
 });
 
-// app.get("/products", (req, res) => {
-//   console.log(req.params.id);
-//   const productId = req.params.id;
-//   const productQueryString = "SELECT * FROM products";
-//   connection.query(productQueryString, (err, rows, fields) => {
-//     if (err) {
-//       console.log(err);
-//       res.sendStatus(500);
-//       res.end();
-//     }
-//
-//     const products = rows.map(row => {
-//       return {
-//         "Product Id": row.product_id,
-//         "Product Name": row.product_name,
-//         "Product Image": row.product_image,
-//         "Product Description": row.product_description
-//       };
-//     });
-//     res.json(products);
-//   });
-// });
-//
-// app.get("/inventory", (req, res) => {
-//   console.log("fetching products:" + req.params.id);
-//   const inventoryQuery = "SELECT * FROM inventory";
-//   connection.query(inventoryQuery, (err, rows, fields) => {
-//     if (err) {
-//       console.log(err);
-//       res.sendStatus(500);
-//       res.end();
-//     }
-//     const inventory = rows.map(row => {
-//       return {
-//         "Product ID": row.product_id,
-//         Waist: row.waist,
-//         Length: row.length,
-//         Style: row.style,
-//         Count: row.count
-//       };
-//     });
-//     res.json(inventory);
-//   });
-// });
+app.get("/products", (req, res) => {
+  console.log(req.params.id);
+  const productId = req.params.id;
+  const productQueryString = "SELECT * FROM products";
+  connection.query(productQueryString, (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      res.end();
+    }
+
+    const products = rows.map(row => {
+      return {
+        "Product Id": row.product_id,
+        "Product Name": row.product_name,
+        "Product Image": row.product_image,
+        "Product Description": row.product_description
+      };
+    });
+    res.json(products);
+  });
+});
+
+app.get("/inventory", (req, res) => {
+  console.log("fetching products:" + req.params.id);
+  const inventoryQuery = "SELECT * FROM inventory";
+  connection.query(inventoryQuery, (err, rows, fields) => {
+    if (err) {
+      console.log(err);
+      res.sendStatus(500);
+      res.end();
+    }
+    const inventory = rows.map(row => {
+      return {
+        "Product ID": row.product_id,
+        Waist: row.waist,
+        Length: row.length,
+        Style: row.style,
+        Count: row.count
+      };
+    });
+    res.json(inventory);
+  });
+});
 
 app.get("/products/inventory", (req, res) => {
-  console.log(req.params.id);
   const joinQueryString =
     "SELECT * FROM products JOIN inventory on products.product_id = inventory.product_id";
   connection.query(joinQueryString, [req.params.id], (err, rows, fields) => {
@@ -92,9 +90,10 @@ app.get("/products/inventory", (req, res) => {
 });
 
 app.get("/products/inventory/:id", (req, res) => {
-  const joinQueryString =
+  const productInventoryId = req.params.id;
+  const queryString =
     "SELECT * FROM products JOIN inventory on products.product_id = inventory.product_id WHERE products.product_id = ?";
-  connection.query(joinQueryString, [req.params.id], (err, rows, fields) => {
+  connection.query(queryString, [productInventoryId], (err, rows, fields) => {
     if (err) {
       console.log(err);
       res.sendStatus(500);
@@ -120,3 +119,5 @@ app.get("/products/inventory/:id", (req, res) => {
 app.listen(port, hostname, () => {
   console.log(`Server running at http://${hostname}:${port}/`);
 });
+
+module.exports = app;

@@ -4,7 +4,8 @@
   "description": "homework for bonobos",
   "main": "server.js",
   "scripts": {
-    "test": "npm test"
+    "start": "nodemon server.js",
+    "test": "mocha test.js"
   },
   "repository": {
     "type": "git",
@@ -13,9 +14,14 @@
   "author": "Samson Yuwono",
   "license": "ISC",
   "dependencies": {
+    "chai": "^4.2.0",
+    "chai-http": "^4.2.1",
     "express": "^4.16.4",
+    "mocha": "^6.0.2",
     "morgan": "^1.9.1",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "request": "^2.88.0",
+    "should": "^13.2.3"
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
