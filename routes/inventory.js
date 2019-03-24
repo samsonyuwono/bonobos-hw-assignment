@@ -7,7 +7,7 @@ router.get("/inventory", (req, res) => {
   const inventoryQuery = "SELECT * FROM inventory";
   connection.query(inventoryQuery, (err, rows, fields) => {
     if (err) {
-      console.log(err);
+      console.log("Failed to query for inventory: " + err);
       res.sendStatus(500);
       res.end();
     }

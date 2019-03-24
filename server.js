@@ -3,7 +3,6 @@ const mysql = require("mysql");
 const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
-const hostname = "localhost";
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));

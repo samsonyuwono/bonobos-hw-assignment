@@ -8,7 +8,7 @@ router.get("/products", (req, res) => {
   const productQueryString = "SELECT * FROM products";
   connection.query(productQueryString, (err, rows, fields) => {
     if (err) {
-      console.log(err);
+      console.log("Failed to query for products: " + err);
       res.sendStatus(500);
       res.end();
     }
