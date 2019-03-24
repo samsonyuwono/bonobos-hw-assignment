@@ -6,7 +6,7 @@ const connection = require("../db/connection");
 router.get("/products/inventory", (req, res) => {
   const joinQueryString =
     "SELECT * FROM products JOIN inventory on products.product_id = inventory.product_id";
-  connection.query(joinQueryString, [req.params.id], (err, rows, fields) => {
+  connection.query(joinQueryString, (err, rows, fields) => {
     if (err) {
       console.log("Failed to query for product inventory: " + err);
       res.sendStatus(500);

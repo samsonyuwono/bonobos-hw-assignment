@@ -26,5 +26,6 @@
   },
   "devDependencies": {
     "nodemon": "^1.18.10"
-  }
+  },
+  "proxy": "https://floating-refuge-12864.herokuapp.com"
 }

@@ -13,6 +13,11 @@ const inventoryRoute = require("./routes/inventory");
 const productRoute = require("./routes/products");
 const productInventoryRoute = require("./routes/productInventory.js");
 
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "*");
+  next();
+});
+
 app.use(inventoryRoute);
 app.use(productRoute);
 app.use(productInventoryRoute);
