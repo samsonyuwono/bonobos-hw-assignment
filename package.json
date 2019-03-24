@@ -4,7 +4,7 @@
   "description": "homework for bonobos",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server.js",
+    "start": "open http://localhost:3000 && nodemon server.js",
     "test": "mocha test.js"
   },
   "repository": {
@@ -14,6 +14,7 @@
   "author": "Samson Yuwono",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "chai": "^4.2.0",
     "chai-http": "^4.2.1",
     "express": "^4.16.4",

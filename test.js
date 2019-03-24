@@ -1,6 +1,7 @@
 const chai = require("chai");
 const chaiHttp = require("chai-http");
-const server = require("./server");
+const router = require("./server");
+const products = require("./routes/products");
 const should = chai.should();
 
 chai.use(chaiHttp);
@@ -8,7 +9,7 @@ chai.use(chaiHttp);
 describe("GET /products", () => {
   it("should get all products", done => {
     chai
-      .request(server)
+      .request(router)
       .get("/products")
       .end((err, res) => {
         res.should.have.status(200);
@@ -22,7 +23,7 @@ describe("GET /products", () => {
 describe("GET /inventory", () => {
   it("should get all inventory", done => {
     chai
-      .request(server)
+      .request(router)
       .get("/products/inventory")
       .end((err, res) => {
         res.should.have.status(200);
@@ -36,7 +37,7 @@ describe("GET /inventory", () => {
 describe("GET /products/inventory", () => {
   it("should get all inventory by product id", done => {
     chai
-      .request(server)
+      .request(router)
       .get("/products/inventory")
       .end((err, res) => {
         res.should.have.status(200);
@@ -50,7 +51,7 @@ describe("GET /products/inventory", () => {
 describe("GET /products/inventory/3", () => {
   it("checks for items that with product id 3", done => {
     chai
-      .request(server)
+      .request(router)
       .get("/products/inventory/3")
       .end((err, res) => {
         res.should.have.status(200);
