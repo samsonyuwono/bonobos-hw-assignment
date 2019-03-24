@@ -15,14 +15,14 @@ router.get("/products/inventory", (req, res) => {
 
     const productInventories = rows.map(row => {
       return {
-        "Product ID": row.product_id,
-        "Product Category": row.product_name,
-        "Product Image": row.product_image,
-        "Product Description": row.product_description,
-        Waist: row.waist,
-        Length: row.length,
-        Style: row.style,
-        Count: row.count
+        product_id: row.product_id,
+        product_category: row.product_name,
+        product_image: row.product_image,
+        product_description: row.product_description,
+        waist: row.waist,
+        length: row.length,
+        style: row.style,
+        count: row.count
       };
     });
     res.json(productInventories);

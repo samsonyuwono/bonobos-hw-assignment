@@ -13,11 +13,11 @@ router.get("/inventory", (req, res) => {
     }
     const inventory = rows.map(row => {
       return {
-        "Product ID": row.product_id,
-        Waist: row.waist,
-        Length: row.length,
-        Style: row.style,
-        Count: row.count
+        product_id: row.product_id,
+        waist: row.waist,
+        length: row.length,
+        style: row.style,
+        count: row.count
       };
     });
     res.json(inventory);
