@@ -4,7 +4,6 @@ const app = express();
 const morgan = require("morgan");
 const bodyParser = require("body-parser");
 const hostname = "localhost";
-const port = 3000;
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static("./public"));
@@ -23,8 +22,10 @@ app.get("/", (req, res) => {
   res.send("Success");
 });
 
-app.listen(port, hostname, () => {
-  console.log(`Server running at http://${hostname}:${port}/`);
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, hostname, () => {
+  console.log("Server running at" + PORT);
 });
 
 module.exports = app;
