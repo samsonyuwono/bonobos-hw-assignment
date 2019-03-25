@@ -21,3 +21,5 @@ Since it was a simple task that didn't require many moving parts, I decided to u
 Since the list of product inventory data displayed onto the DOM is extensive, I would add a search feature in the future to make it more user friendly. This search feature will allow the user to filter and search for any term including name, waist, style, and product_id.
 
 In regards to the design of the webpage, I would like to make the table header sticky so when the user scrolls down, they know what each column's data is.
+
+As for my code, there might be an opportunity to add more error handling in my fetchAPI to account for an outdated or non-existent API endpoint.
