@@ -1,0 +1,44 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+  color: black;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+  margin: 35px;
+  font-weight: bold;
+}
+
+.product-table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.table-header-cell {
+  padding: 20px 4px;
+  text-align: left;
+  border-bottom: 1px solid black;
+  text-transform: uppercase;
+}
+
+.product-table-cell {
+  padding: 3px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: 300;
+  font-size: 15px;
+  border-bottom: solid 1px;
+}
+
+.product-row img {
+  width: 100px;
+  margin: 20px 20px;
+}

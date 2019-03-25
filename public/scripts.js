@@ -14,57 +14,68 @@ function renderResults(productInventory) {
   document.getElementById("output").innerHTML = product;
 }
 
-function removeCommas(product) {
-  return product.replace(/,/g, "");
-}
-
 function formatResults(productInventory) {
   return `${productInventory.map(
     products =>
-      "<div class='product-row'>" +
+      "<tr class='product-row'>" +
       productImage(products) +
-      "<div class='product-info'>" +
       productName(products) +
       waistLength(products) +
       style(products) +
       count(products) +
-      "</div>" +
-      "</div>"
+      "</tr>"
   )}`;
+}
+
+function removeCommas(str) {
+  return str.replace(/,/g, "");
 }
 
 function productImage(products) {
   return (
-    "<div class='table-body-cell'><img src=" +
+    "<td class='product-table-cell' ><img src=" +
     products.product_image +
-    ">" +
-    "</img></div>"
+    "/></td>"
   );
 }
 
+// function productDescription(products) {
+//   return (
+//     "<p class='product-description'>" + products.product_description + "</p>"
+//   );
+// }
+
 function productName(products) {
-  return "<div class='table-body-cell'>" + products.product_name + "</div>";
+  return (
+    "<td class='product-table-cell'>" +
+    capitalize(products.product_name) +
+    "</td>"
+  );
 }
 
 function waistLength(products) {
   return (
-    "<div class='table-body-cell'><b>Size</b> " +
+    "<td class='product-table-cell'>" +
     products.waist +
     "W" +
     "/" +
     products.length +
-    "L </div>"
+    "L </td>"
   );
 }
 
 function style(products) {
   return (
-    "<div class='table-body-cell'><b>Style:</b>" + products.style + "</div>"
+    "<td class='product-table-cell'>" + capitalize(products.style) + "</td>"
   );
 }
 
 function count(products) {
-  return (
-    "<div class='table-body-cell'><b>Count:</b> " + products.count + "</div>"
-  );
+  return "<td class='product-table-cell'> " + products.count + "</td>";
+}
+
+function capitalize(str) {
+  return str.replace(/\b\w/g, l => {
+    return l.toUpperCase();
+  });
 }

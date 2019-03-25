@@ -5,27 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Bonobos</title>
-    <link rel="stylesheet" type-"text/css" href="styles.css">
+    <link rel="stylesheet" type-"text/css" href="./assets/styles.css">
+    <link rel="shortcut icon" type="image/png" href="./assets/favicon.ico" />
     <link
-      href="https://fonts.googleapis.com/css?family=Nunito|Roboto"
+      href="https://fonts.googleapis.com/css?family=Nunito+Sans"
       rel="stylesheet"
     />
   </head>
   <body>
     <div class="main">
-      <h1 class="header">Bonobos Inventory Management System</h1>
-      <div class="products-table"></div>
-      <div id="resp-table-header">
-        <div class="“table-header-cell”"></div>
-        <div class="“table-header-cell”">Name</div>
-        <div class="“table-header-cell”">Size</div>
-        <div class="“table-header-cell”">Style</div>
-        <div class="“table-header-cell”">Count</div>
-      </div>
-      <div id="output" class="product-table-body"></div>
+      <header class="header">BONOBOS Inventory Management System</header>
+      <table class="product-table" cellpadding="0" cellspacing="0" border="0">
+        <thead>
+          <tr class="table-header">
+            <th class="table-header-cell"></th>
+            <th class="table-header-cell">Name</th>
+            <th class="table-header-cell">Size</th>
+            <th class="table-header-cell">Style</th>
+            <th class="table-header-cell">Count</th>
+          </tr>
+        </thead>
+        <tbody id="output" class="product-table-body"></tbody>
+      </table>
     </div>
   </body>
   <script src="scripts.js"></script>
+
   <script>
     fetchProductInventory();
   </script>
