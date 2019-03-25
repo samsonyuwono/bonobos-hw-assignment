@@ -39,12 +39,6 @@ function productImage(products) {
   );
 }
 
-// function productDescription(products) {
-//   return (
-//     "<p class='product-description'>" + products.product_description + "</p>"
-//   );
-// }
-
 function productName(products) {
   return (
     "<td class='product-table-cell'>" +

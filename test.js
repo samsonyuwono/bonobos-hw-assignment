@@ -47,16 +47,3 @@ describe("GET /products/inventory", () => {
       });
   });
 });
-
-describe("GET /products/inventory/3", () => {
-  it("checks for items that with product id 3", done => {
-    chai
-      .request(router)
-      .get("/products/inventory/3")
-      .end((err, res) => {
-        res.should.have.status(200);
-        res.body.length.should.be.eql(42);
-        done();
-      });
-  });
-});
