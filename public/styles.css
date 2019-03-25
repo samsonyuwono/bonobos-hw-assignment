@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  font-family: "Nunito", sans-serif;
+  color: black;
+  line-height: 1.6;
+}
+
+.header {
+  text-align: center;
+}
+
+#resp-table-header {
+  display: table-header-group;
+  background-color: gray;
+  font-weight: bold;
+  font-size: 25px;
+}
+
+#resp-table-header .table-header-cell {
+  display: table-cell;
+  padding: 10px;
+  text-align: justify;
+  border-bottom: 1px solid black;
+}
+
+.products-container {
+  border: 2px solid red;
+}
+
+.product-table-body {
+  display: table-row-group;
+}
+
+.product-row {
+  border: 2px solid red;
+  display: table-row;
+}
+
+.product-info {
+  display: inline;
+}
+
+.table-body-cell {
+  display: table-cell;
+}
+
+.product-row img {
+  width: 100px;
+}

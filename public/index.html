@@ -5,9 +5,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Bonobos</title>
+    <link rel="stylesheet" type-"text/css" href="styles.css">
+    <link
+      href="https://fonts.googleapis.com/css?family=Nunito|Roboto"
+      rel="stylesheet"
+    />
   </head>
   <body>
-    <div id="output"></div>
+    <div class="main">
+      <h1 class="header">Bonobos Inventory Management System</h1>
+      <div class="products-table"></div>
+      <div id="resp-table-header">
+        <div class="“table-header-cell”"></div>
+        <div class="“table-header-cell”">Name</div>
+        <div class="“table-header-cell”">Size</div>
+        <div class="“table-header-cell”">Style</div>
+        <div class="“table-header-cell”">Count</div>
+      </div>
+      <div id="output" class="product-table-body"></div>
+    </div>
   </body>
-  <script src="./client/index.js"></script>
+  <script src="scripts.js"></script>
+  <script>
+    fetchProductInventory();
+  </script>
 </html>
